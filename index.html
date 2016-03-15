@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Animation Library -->
+    <link rel="stylesheet" href="lib/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/ParallelCoordinates.css">
+    <link rel="stylesheet" type="text/css" href="css/ForceGraph.css">
+    <link rel="stylesheet" type="text/css" href="css/UI.css">
+    <script src="lib/d3js/d3.min.js" charset="utf-8"></script>
+
+    <title>HELIOS - Knights of the NII</title>
+
+    <script src="js/Renderer.js"></script>
+    <script src="js/DataReader.js"></script>
+    <script src="js/plots/ParallelCoordinates.js"></script>
+    <script src="js/plots/NetworkGraph.js"></script>
+    <script src="js/DataProvider.js"></script>
+</head>
+<body>
+<h1>HELIOS</h1>
+
+<span id="content-container">
+
+<div id="dataloader">
+    <div id="dl-filepicker">
+        <div class="panel panel-default">
+            <div class="panel-heading">HELIOS File Loading</div>
+            <div class="panel-body">
+                <span class="panel-inline-content">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown" aria-hashpopup="true">
+                            Files
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="file-dropdown">
+                        </ul>
+                    </div>
+                </span>
+                <span id="file-loader-label" class="label label-info panel-inline-center hidden">
+                    HIDEME
+                </span>
+                <span class="panel-inline-content panel-inline-button">
+                    <button type="button" class="btn btn-default" aria-label="Left Align"
+                            onclick="nii_vis_config.ui.setup.fileSelected();">
+                        <span>Next</span><span class="glyphicon glyphicon-arrow-right next-glyphicon"
+                                               aria-hidden="true"></span></button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div id="dl-columnpicker" class="hidden">
+        <div class="panel panel-default">
+            <div class="panel-heading">HELIOS Data Selection</div>
+            <div class="panel-body">
+                <span class="panel-inline-content">
+                    <ul id="dl-file-header-list" class="list-group">
+                    </ul>
+                </span>
+                <span class="panel-inline-content panel-inline-button">
+                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="nii_vis_config.ui.setup.headerSelected();">
+                        <span>Next</span><span class="glyphicon glyphicon-arrow-right next-glyphicon"
+                                               aria-hidden="true"></span></button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div id="dl-vispicker" class="hidden">
+        <div class="panel panel-default">
+            <div class="panel-heading">HELIOS VisType Selection</div>
+            <div class="panel-body">
+                <span class="panel-inline-content">
+                    <ul id="vis-type-list" class="list-group">
+                    </ul>
+                </span>
+                <span class="panel-inline-content panel-inline-button">
+                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="nii_vis_config.ui.setup.graphsSelected();">
+                        <span>Next</span><span class="glyphicon glyphicon-arrow-right next-glyphicon"
+                                               aria-hidden="true"></span></button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div id="dl-vis-loop-container">
+        <!-- Here will be the visualization box loop for changing the vis settings -->
+    </div>
+    <div id="dl-progress" class="hidden">
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                <span class="sr-only">x% Complete</span>
+            </div>
+        </div>
+        <div id="dl-progress-text">
+            data loading in progress
+        </div>
+    </div>
+</div>
+
+<div id="graph_container" class="hidden">
+    <!-- <form>
+        <h3> Link threshold 0 <input type="range" id="thersholdSlider" name="points" value=0 min="0" max="10"
+                                     onchange="nii_vis_config.avail_vis_types.graph_plot.rendering.features.threshold.threshold(this.value)"> 10
+        </h3>
+    </form> -->
+    <!-- Todo: REMOVE THESE CONTAINERS AND REPLACE WITH DYNAMIC -->
+    <span id="parallel"><span id="left-container-hook"></span></span>
+    <span id="graph"><span id="right-container-hook"></span></span>
+</div>
+
+<div id="detail-panel" class="hidden">
+    <h3 class="detail-panel-text">Sample Details:</h3>
+</div>
+</span>
+<span id="settings-side-panel" class="hidden" hidden>
+    <h4>Settings</h4>
+</span>
+
+<div id="settings-button" class="glyphicon glyphicon-cog"
+     onclick="nii_vis_config.ui.side_panel.toggle_settings();"></div>
+
+<script src="js/ResourceLoader.js"></script>
+<script src="js/UIHandler.js"></script>
+
+</body>
+
+<script>
+
+    var renderer = new Renderer();
+    nii_vis_config.renderer = renderer;
+
+    nii_vis_config.ui.setup.loadFileDropdown();
+
+    var dataReader = new DataReader();
+    var tst = dataReader.readCSV("data/sample/anomalies.csv", null);
+
+</script>
+
+</html>

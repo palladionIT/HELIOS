@@ -1,0 +1,97 @@
+.panel-inline-content {
+    display: inline-block;
+}
+
+.panel-inline-button {
+    float: right;
+}
+
+.panel-inline-center{
+    margin-left: 5em;
+    /*float: left;*/
+}
+
+.next-glyphicon {
+    padding-left: 5px;
+}
+
+.dl-header-checkbox {
+    margin-left: 2.5em;
+    float: right;
+}
+
+.page-swipe-delay {
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    -MS-animation-delay: 2s;
+}
+
+#dl-progress {
+    margin-left: 25%;
+    width: 50%;
+}
+
+#dl-progress-text {
+    float: right;
+    margin-right: 1em;
+}
+
+/*#graph_seperator {
+    width: 1px;
+    height: 100%;
+    display: inline;
+    float: left;
+    background-color: #222222;
+}*/
+
+#detail-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #222222;
+}
+
+.detail-panel-text {
+    color: #3c763d;
+    margin-right: 10px;
+}
+
+#settings-button {
+    position: absolute;
+    right:5px;
+    top:5px;
+}
+
+.settings-button-hover {
+    color: #ffffff;
+}
+
+#settings-side-panel {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 15%;
+    min-width: 175px;
+    background-color: #222222;
+    color: #bbbbbb;
+    padding: 5px;
+    padding-top: 20px;
+}
+
+#settings-sidepanel-section-splitter {
+
+}
+
+#graph_plot-edge-container {
+    clear: both;
+}
+
+#graph_plot-node-multi-target-container {
+    float: right;
+}
+#graph_plot-node-multi-source-container {
+    float: left;
+}

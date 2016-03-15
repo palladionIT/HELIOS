@@ -1,0 +1,16 @@
+.node {
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+.link {
+    stroke: #999;
+    stroke-opacity: .6;
+}
+
+.inner-sample-link {
+    stroke: #ff2020;
+}
+
+.node text {
+    font: 9px helvetica;
+}
