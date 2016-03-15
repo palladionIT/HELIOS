@@ -33,9 +33,9 @@ If you want to contribute you should read the [Guide](vis_implementation_guide.m
 ### Documentation
 - [x] Readme File
 - [ ] Write extensive comments
-- [ ] Benchmarks
-    - [ ] Draw Benchmark
-    - [ ] Data Loading Benchmark
+- [x] Benchmarks
+    - [x] Draw Benchmark
+    - [x] Data Loading Benchmark
 
 ### Data Loading
 #### Datatype Support
