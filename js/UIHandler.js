@@ -9,7 +9,8 @@ var ui_setup_complete = false;
 var nii_vis_config = {
     avail_vis_types: {
         parallell_plot: new ParallelPlot(d3.select('#left-container-hook'), null, dataProvider),
-        graph_plot: new NetworkGraph(d3.select('#right-container-hook'), null, dataProvider)
+        graph_plot: new NetworkGraph(d3.select('#right-container-hook'), null, dataProvider),
+        map: new Map(d3.select('#right-container-hook'), null, dataProvider)
     },
     enabled_vis_types: [],
     available_dimensions: [],
