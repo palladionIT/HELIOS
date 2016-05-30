@@ -47,6 +47,7 @@ function VisPrototype(rootNode, filePath, data_provider) {
                         + '<span class="panel-inline-content">';
 
                     // Todo: add HTML creation for setup settings box
+                    var box_content = '';
 
                     // Todo: insert other methods like sorting etc...
 
